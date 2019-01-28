@@ -27,6 +27,7 @@ textarea{
 	border: 2px solid black;
 	background-color: transparent;
 	font-size: 1em;
+	padding: 0.3em;
 }
 
 #info{
@@ -46,39 +47,85 @@ textarea{
 	text-align: center;
 }
 
-.boxed {
-	border: 2px solid black;
-	border-radius: 30px;
-	width: 50px;
-	height: 50px;
+#AC .ACBox{
+	display: block;
+	margin: auto;
+	width: 120px;
+	height: 120px;
 }
 
-.boxed input{
+#AC h2{
+	text-align: center;
+}
+
+.AttributeBox{
+	display: flex;
+	flex-direction: row;
+	justify-content: left;
+}
+
+.CenterBox{
+	display: block;
+	margin: auto;
+	width: 80%;
+}
+
+.Attribute {
+	border: 2px solid black;
+	border-radius: 60px;
+	width: 60px;
+	height: 60px;
+}
+
+
+.Attribute input{
 	display: inline-block;
 	width: 100%;
 	height: 100%;
 	border: none;
+	margin: 0px;
+	padding: 0px;
 	background-color: transparent;
 	text-align: center;
 	font-size: 30px;
 }
 
-.boxed2 {
+
+.ModifierBox {
 	border: 2px solid black;
-	border-radius: 30px;
-	width: 150px;
-	height: 150px;
+	border-radius: 50px;
+	width: 40px;
+	height: 40px;
 }
 
-
-.boxed2 input{
+.ModifierBox input{
 	display: inline-block;
 	width: 100%;
 	height: 100%;
 	border: none;
+	margin: 0px;
+	padding: 0px;
 	background-color: transparent;
 	text-align: center;
-	font-size: 50px;
+	font-size: 15px;
+}
+
+.ACBox {
+	border: 2px solid black;
+	border-radius: 30px;
+	width: 120px;
+	height: 120px;
+}
+
+
+.ACBox input{
+	display: inline-block;
+	width: 50%;
+	height: 50%;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+	font-size: 40px;
 }
 
 /*based on https://simplednd.wordpress.com/creating-characters/character-sheet/#jp-carousel-2095 */
