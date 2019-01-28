@@ -1,0 +1,78 @@
+body{
+	display: flex;
+	flex-direction: column;
+}
+table{
+	display: flex;
+}
+
+span input{
+	display: block;
+}
+
+input{
+	type: text;
+	type: number;
+	text-align: center;
+	border: 2px solid black;
+	padding: 5px;
+}
+
+textarea{
+	type: text;
+	border: 2px solid black;
+}
+
+#info{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+#weapons{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+#WeaponText{
+	type: text;
+	text-align: center;
+}
+
+.boxed {
+	border: 2px solid black;
+	border-radius: 30px;
+	width: 50px;
+	height: 50px;
+}
+
+.boxed input{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+	font-size: 30px;
+}
+
+.boxed2 {
+	border: 2px solid black;
+	border-radius: 30px;
+	width: 150px;
+	height: 150px;
+}
+
+
+.boxed2 input{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+	font-size: 50px;
+}
+
+/*based on https://simplednd.wordpress.com/creating-characters/character-sheet/#jp-carousel-2095 */
