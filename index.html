@@ -3,8 +3,8 @@
 
 	<head> 
 		<title> HTML/CSS </title>
-
 		<link rel="stylesheet" href="Table.css">
+		<script src="sheet.js"></script>
 	</head>
 	
 	<body>
@@ -98,24 +98,24 @@
 			</div>
 			
 			<!Saving Throws & Skills>
-			<div id="Saving_Throws_Skills">
+			<div class="Saving_Throws_Skills">
 				<div>
-					<div class="BoxNextToText">
-						<div class="SquareBox">
-							<input name="Inspiration" maxlength="2">
-						</div>
+					<div class="BoxNextToText SquareBox">
+						<input name="Inspiration" maxlength="2">
 						<b class="TextBorder">Inspiration</b>
 					</div>
-					<div class="BoxNextToText">
-						<div class="SquareBox2">
+					<div class="BoxNextToText SquareBox2">
 							<input name="Proficiency Bonus" maxlength="2">
-						</div>
-						<b class="TextBorder2" style="margin-top: 5px;">Proficiency Bonus</b>
+						<b class="TextBorder2">Proficiency Bonus</b>
 					</div>
 				</div>
 				
-				<div id="SkillBorder">
-					<input type="checkbox">
+				<div class="Saving_Throws_Skills" id="SkillBorder">
+					<div>
+						<input type="checkbox">
+						<input type="text" name="ST_Strength" maxlength="2">
+						<b>Strength</b>
+					</div>
 				</div>
 			</div>
 			

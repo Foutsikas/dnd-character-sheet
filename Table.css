@@ -135,21 +135,27 @@ h3{
 	margin-bottom: 2px;
 }
 
-#Saving_Throws_Skills{
+.Saving_Throws_Skills{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+}
+
+.Saving_Throws_Skills input{
+	background-color: transparent;
+	border: none;
+	width: 35px;
+	font-size: 15px;
+}
+
+.Saving_Throws_Skills input[type="checkbox"]{
+	margin: 0px;
 }
 
 .BoxNextToText{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-}
-
-.BoxNextToText b{
-	margin-left: 2px;
-	margin-top: 15px;
 }
 
 .SquareBox{
@@ -193,7 +199,7 @@ h3{
 	border-radius: 10px;
 	width: 100px;
 	height: 30px;
-	margin-left: 0px;
+	margin-left: 2px;
 }
 
 .TextBorder2{
@@ -201,12 +207,15 @@ h3{
 	border-radius: 10px;
 	width: 100px;
 	height: 50px;
-	margin-left: 0px;
+	margin-top: 5px;
+	margin-left: 2px;
 }
 
 #SkillBorder{
 	border: 2px solid black;
 	border-radius: 10px;
 }
+
+
 
 /*based on https://simplednd.wordpress.com/creating-characters/character-sheet/#jp-carousel-2095 */
