@@ -30,6 +30,10 @@ textarea{
 	padding: 0.3em;
 }
 
+h3{
+	margin-bottom: 0px;
+}
+
 #info{
 	display: flex;
 	flex-direction: row;
@@ -44,17 +48,6 @@ textarea{
 
 #WeaponText{
 	type: text;
-	text-align: center;
-}
-
-#AC .ACBox{
-	display: block;
-	margin: auto;
-	width: 120px;
-	height: 120px;
-}
-
-#AC h2{
 	text-align: center;
 }
 
@@ -120,12 +113,76 @@ textarea{
 
 .ACBox input{
 	display: inline-block;
-	width: 50%;
+	width: 60%;
 	height: 50%;
 	border: none;
 	background-color: transparent;
 	text-align: center;
 	font-size: 40px;
+	padding-right: 0px;
+}
+
+#AC .ACBox{
+	display: block;
+	margin: auto;
+	width: 120px;
+	height: 120px;
+	padding: auto;
+}
+
+#AC h2{
+	text-align: center;
+	margin-bottom: 2px;
+}
+
+#Saving_Throws_Skills{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+.BoxNextToText{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.BoxNextToText b{
+	margin-left: 2px;
+	margin-top: 15px;
+}
+
+.SquareBox{
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 60px;
+	height: 60px;
+}
+
+.SquareBox input{
+	display: inline-block;
+	width: 60%;
+	height: 50%;
+	border: none;
+	background-color: transparent;
+	text-align: center;
+	font-size: 20px;
+}
+
+.TextBorder{
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 100px;
+	height: 30px;
+	margin-left: 0px;
+}
+
+.TextBorder2{
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 100px;
+	height: 50px;
+	margin-left: 0px;
 }
 
 /*based on https://simplednd.wordpress.com/creating-characters/character-sheet/#jp-carousel-2095 */
