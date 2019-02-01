@@ -216,6 +216,12 @@ h3{
 	border-radius: 10px;
 }
 
+#SkillBorder input{
+	display: column;
+	background-image: linear-gradient(to top, black 0px, transparent 1px);
+	padding-bottom: 0px;	
+}
+
 
 
 /*based on https://simplednd.wordpress.com/creating-characters/character-sheet/#jp-carousel-2095 */
