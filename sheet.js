@@ -1,54 +1,28 @@
 
-let x = "foo"; // String
-let i = 5; // Number
-let f = 5.2; // Number
-
-let y = [1, 2, 3, "mitsos"];
-console.log(y[2]);
-
-let z = {
-	'name': 'Rodgar',
-	'age': 31
-}; // Dictionary, HashMap, Object
-
-console.log(z['name'])
-console.log(z.name)
 
 
-function add(x, y) {
-	return x+y;
+myHero = {
+	name: 'Rodgar',
+	class: 'Barbarian',
+	attributes: {
+		str: 18,
+		dex: 10,
+		con: 14,
+		int: 8,
+		wis: 10,
+		cha: 12
+	},
+	inspiration: true,
+	prof_bonus: 2,
+	throw_prof: ['str', 'con'],
+	languages: ['common', 'dwarven'],
+	level: 1
+};
+
+
+function LoadCharacter(hero) {
+	let name = document.getElementById("name");
+	name.value = hero.name;
+	console.log(name);
 }
 
-let w = 2;
-w = add
-
-w(1, 2);
-
-
-
-/////////////
-
-
-function foo(w) {
-	return w(4, 5);
-}
-
-
-let ffff = foo(add);
-console.log("ffff is " + ffff);
-
-////////////
-
-
-function make_adder (x) {
-	return function (y) {
-		return x+y;
-	}
-}
-
-const adds_two = make_adder(2);
-console.log(adds_two(4));
-
-
-const wtf = make_adder(make_adder(5));
-console.log(wtf(2));

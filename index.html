@@ -14,15 +14,15 @@
 				<h2>Character Info</h2>
 					<span>
 						Character Name
-						<input name="CharacterName" maxlength="20">
+						<input id="name" name="CharacterName" maxlength="20">
 					</span>
 					<span>
 						Class
-						<input name="Class" maxlength="15">
+						<input id="Class" name="Class" maxlength="15">
 					</span>
 					<span>
 						Race
-						<input name="Race" maxlength="10">
+						<input id="Race" name="Race" maxlength="10">
 					</span>
 					<br></br>
 					
@@ -32,10 +32,10 @@
 						<b>STRENGTH</b>
 						<div class="AttributeBox">
 							<div class="Attribute">
-								<input name="Strength" maxlength="2">
+								<input id="Strength" name="Strength" maxlength="2">
 							</div>
 							<div class="ModifierBox">
-								<input name="StrengthModifier" maxlength="2">
+								<input id="StrengthModifier" name="StrengthModifier" maxlength="2">
 							</div>
 						</div>
 					</span>
@@ -43,10 +43,10 @@
 						<b>DEXTERITY</b>
 						<div class="AttributeBox">
 							<div class="Attribute">
-								<input name="Dexterity" maxlength="2">
+								<input id="Dexterity" name="Dexterity" maxlength="2">
 							</div>
 							<div class="ModifierBox">
-								<input name="DexterityModifier" maxlength="2">
+								<input id="DexterityModifier" name="DexterityModifier" maxlength="2">
 							</div>
 						</div>
 					</span>
@@ -54,10 +54,10 @@
 						<b>CONSTITUTION</b>
 						<div class="AttributeBox">
 							<div class="Attribute">
-								<input name="Constitution" maxlength="2">
+								<input id="Constitution" name="Constitution" maxlength="2">
 							</div>
 							<div class="ModifierBox">
-								<input name="ConstitutionModifier" maxlength="2">
+								<input id="ConstitutionModifier" name="ConstitutionModifier" maxlength="2">
 							</div>
 						</div>
 					</span>
@@ -65,10 +65,10 @@
 						<b>INTELLIGENCE</b>
 						<div class="AttributeBox">
 							<div class="Attribute">
-								<input name="Intelligence" maxlength="2">
+								<input id="Intelligence" name="Intelligence" maxlength="2">
 							</div>
 							<div class="ModifierBox">
-								<input name="IntelligenceModifier" maxlength="2">
+								<input id="IntelligenceModifier" name="IntelligenceModifier" maxlength="2">
 							</div>
 						</div>
 					</span>
@@ -76,10 +76,10 @@
 						<b>WISDOM</b>
 						<div class="AttributeBox">
 							<div class="Attribute">
-								<input name="Wisdom" maxlength="2">
+								<input id="Wisdom" name="Wisdom" maxlength="2">
 							</div>
 							<div class="ModifierBox">
-								<input name="WisdomModifier" maxlength="2">
+								<input id="WisdomModifier" name="WisdomModifier" maxlength="2">
 							</div>
 						</div>
 					</span>
@@ -87,10 +87,10 @@
 						<b>CHARISMA</b>
 						<div class="AttributeBox">
 							<div class="Attribute">
-								<input name="Charisma" maxlength="2">
+								<input id="Charisma" name="Charisma" maxlength="2">
 							</div>
 							<div class="ModifierBox">
-								<input name="CharismaModifier" maxlength="2">
+								<input id="CharismaModifier" name="CharismaModifier" maxlength="2">
 							</div>
 						</div>
 					</span>
@@ -101,11 +101,11 @@
 			<div class="Saving_Throws_Skills">
 				<div>
 					<div class="BoxNextToText SquareBox">
-						<input name="Inspiration" maxlength="2">
+						<input id="Inspiration" name="Inspiration" maxlength="2">
 						<b class="TextBorder">Inspiration</b>
 					</div>
 					<div class="BoxNextToText SquareBox2">
-							<input name="Proficiency Bonus" maxlength="2">
+							<input id="ProficiencyBonus" name="Proficiency Bonus" maxlength="2">
 						<b class="TextBorder2">Proficiency Bonus</b>
 					</div>
 				</div>
@@ -113,32 +113,32 @@
 				<div class="Saving_Throws_Skills" id="SkillBorder">
 					<div>
 						<input type="checkbox">
-						<input type="text" name="ST_Strength" maxlength="2">
+						<input type="text" id="ST_Strength" name="ST_Strength" maxlength="2">
 						<b>Strength</b>
 					</div>
 					<div>
 						<input type="checkbox">
-						<input type="text" name="ST_Dexterity" maxlength="2">
+						<input type="text" id="ST_Dexterity" name="ST_Dexterity" maxlength="2">
 						<b>Dexterity</b>
 					</div>
 					<div>
 						<input type="checkbox">
-						<input type="text" name="ST_Constitution" maxlength="2">
+						<input type="text" id="ST_Constitution" name="ST_Constitution" maxlength="2">
 						<b>Constitution</b>
 					</div>
 					<div>
 						<input type="checkbox">
-						<input type="text" name="ST_Intelligence" maxlength="2">
+						<input type="text" id="ST_Intelligence" name="ST_Intelligence" maxlength="2">
 						<b>Intelligence</b>
 					</div>
 					<div>
 						<input type="checkbox">
-						<input type="text" name="ST_Wisdom" maxlength="2">
+						<input type="text" id="ST_Wisdom" name="ST_Wisdom" maxlength="2">
 						<b>Wisdom</b>
 					</div>
 					<div>
 						<input type="checkbox">
-						<input type="text" name="ST_Charisma" maxlength="2">
+						<input type="text" id="ST_Charisma" name="ST_Charisma" maxlength="2">
 						<b>Charisma</b>
 					</div>
 				</div>
@@ -150,7 +150,7 @@
 					<h2>Armor Class</h2>
 					<span class="CenterBox">
 						<div class="ACBox">
-							<input name="Armor_Class" maxlength="2">
+							<input id="ArmorClass" name="Armor_Class" maxlength="2">
 						</div>
 					</span>
 				</div>
@@ -158,7 +158,7 @@
 					<h2>Max Hit Points</h2>
 					<span class="CenterBox">
 						<div class="ACBox">
-							<input name="MAX_Hit_Points" maxlength="3">
+							<input id="MaxHP" name="MAX_Hit_Points" maxlength="3">
 						</div>
 					</span>
 				</div>
@@ -166,7 +166,7 @@
 					<h2>Current Hit Points</h2>
 					<span class="CenterBox">
 						<div class="ACBox">
-							<input name="C_HP" maxlength="3">
+							<input id="CurrentHP" name="C_HP" maxlength="3">
 						</div>
 					</span>
 				</div>
@@ -177,32 +177,32 @@
 				<h2>Level Managment</h2>
 					<span>
 						Level
-						<input name="CharacterName" maxlength="3">
+						<input id="CharacterLevel" name="CharacterLevel" maxlength="3">
 					</span>
 					<span>
 						Experience Points
-						<input name="Experience" maxlength="5">
+						<input id="Experience" name="Experience" maxlength="5">
 					</span>
 					<span>
 						NextLvlExp
-						<input name="NextLvlExp" maxlength="5">
+						<input id="NextLvlExp" name="NextLvlExp" maxlength="5">
 					</span>
 				<div>
 					<span>
 						<h3>LANGUAGES</h3>
-						<textarea rows="3" cols="15" name="Language"></textarea>
+						<textarea rows="3" cols="15" id="Language" name="Language"></textarea>
 					</span>
 					<span>
 						<h3>CONDITIONS & ENCHANTMENTS</h3>
-						<textarea rows="4" cols="15" name="Conditions & Enchantments"></textarea>
+						<textarea rows="4" cols="15" id="Conditions" name="Conditions & Enchantments"></textarea>
 					</span>
 					<span>
 						<h3>RESISTANCES</h3>
-						<textarea rows="4" cols="15" name="Resistances"></textarea>
+						<textarea rows="4" cols="15" id="Resistances" name="Resistances"></textarea>
 					</span>
 					<span>
 						<h3>SPECIAL SKILLS & ABILITIES</h3>
-						<textarea rows="4" cols="15" name="Special Skills & Abilities"></textarea>
+						<textarea rows="4" cols="15" id="SpecialSkills" name="Special Skills & Abilities"></textarea>
 					</span>
 				</div>
 			</div>
@@ -213,41 +213,44 @@
 			<div id="WeaponText">
 				<span>
 					<h3>Weapon</h3>
-					<input name="Weapon" maxlength="15">
-					<input name="Weapon" maxlength="15">
-					<input name="Weapon" maxlength="15">
+					<input id="Weapon1" name="Weapon" maxlength="15">
+					<input id="Weapon2" name="Weapon" maxlength="15">
+					<input id="Weapon3" name="Weapon" maxlength="15">
 				</span>
 			</div>
 			<div id="WeaponText">
 				<span>
 					<h3>To Hit</h3>
-					<input name="To_Hit" maxlength="15">
-					<input name="To_Hit" maxlength="15">
-					<input name="To_Hit" maxlength="15">
+					<input id="ToHit1" name="To_Hit" maxlength="15">
+					<input id="ToHit2" name="To_Hit" maxlength="15">
+					<input id="ToHit3" name="To_Hit" maxlength="15">
 				</span>
 			</div>
 			<div id="WeaponText">
 				<span>
 					<h3>Damage</h3>
-					<input name="Damage" maxlength="10">
-					<input name="Damage" maxlength="10">
-					<input name="Damage" maxlength="10">
+					<input id="Damage1" name="Damage" maxlength="10">
+					<input id="Damage2" name="Damage" maxlength="10">
+					<input id="Damage3" name="Damage" maxlength="10">
 				</span>
 			</div>
 			<div id="WeaponText">
 				<span>
 					<h3>Range </h3>
-					<input name="Range" maxlength="5">
-					<input name="Range" maxlength="5">
-					<input name="Range" maxlength="5">
+					<input id="Range1" name="Range" maxlength="5">
+					<input id="Range2" name="Range" maxlength="5">
+					<input id="Range3" name="Range" maxlength="5">
 				</span>
 			</div>
 			<div id="WeaponText">
 				<span>
 					<h3>Notes</h3>
-					<textarea rows="4" cols="15" name="Special Skills & Abilities"></textarea>
+					<textarea rows="4" cols="15" id="Notes" name="Notes"></textarea>
 				</span>
 			</div>
 		</div>
+		<script>
+			LoadCharacter(myHero);
+		</script>
 	</body>
 </html>
