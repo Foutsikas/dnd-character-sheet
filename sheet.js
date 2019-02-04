@@ -1,14 +1,12 @@
-
-
-
+//JavaScript Sheet Manager
 myHero = {
-	name: 'Rodgar',
-	class: 'Barbarian',
+	Name: '',
+	Class: '',
 	attributes: {
 		str: 18,
 		dex: 10,
 		con: 14,
-		int: 8,
+		inte: 8,
 		wis: 10,
 		cha: 12
 	},

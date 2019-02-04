@@ -1,13 +1,3 @@
-body{
-	display: flex;
-	flex-direction: column;
-	background-color: #D3D3D3;
-	font-size: 20px;
-}
-table{
-	display: flex;
-}
-
 span input{
 	display: block;
 	background-color: transparent;
@@ -21,7 +11,6 @@ input{
 	padding: 0.6em;
 	
 }
-
 textarea{
 	type: text;
 	border: 2px solid black;
@@ -33,6 +22,7 @@ textarea{
 h3{
 	margin-bottom: 0px;
 }
+
 
 #info{
 	display: flex;
@@ -65,9 +55,8 @@ h3{
 
 .Attribute {
 	border: 2px solid black;
-	border-radius: 60px;
-	width: 60px;
-	height: 60px;
+	border-radius: 50px;
+	height: 50px;
 }
 
 
@@ -97,6 +86,7 @@ h3{
 	height: 100%;
 	border: none;
 	margin: 0px;
+	margin-left: 5px;
 	padding: 0px;
 	background-color: transparent;
 	text-align: center;
