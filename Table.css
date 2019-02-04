@@ -88,11 +88,10 @@ h3{
 	height: 100%;
 	border: none;
 	margin: 0px;
-	margin-left: 0px;
 	padding: 0px;
 	background-color: transparent;
 	text-align: center;
-	font-size: 20px;
+	font-size: 17px;
 }
 
 .ACBox {
@@ -206,12 +205,16 @@ h3{
 #SkillBorder{
 	border: 2px solid black;
 	border-radius: 10px;
+	width: 174px;
+	margin-top: 50px;
 }
 
 #SkillBorder input{
 	display: column;
 	background-image: linear-gradient(to top, black 0px, transparent 1px);
-	padding-bottom: 0px;	
+	padding-bottom: 0px;
+	padding-left: 5px;
+	padding-right: 5px;
 }
 
 
