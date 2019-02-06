@@ -1,3 +1,9 @@
+header{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
 span input{
 	display: block;
 	background-color: transparent;
@@ -55,8 +61,9 @@ h3{
 
 .Attribute {
 	border: 2px solid black;
-	border-radius: 50px;
-	height: 5vh;
+	border-radius: 100px;
+	height: 4vh;
+	width: 30vw
 }
 
 
@@ -69,7 +76,7 @@ h3{
 	padding: 0px;
 	background-color: transparent;
 	text-align: center;
-	font-size: 30px;
+	font-size: 25px;
 }
 
 
