@@ -12,8 +12,12 @@ myHero = {
 
 
 function CalculateBonus(attribute){
-	let bonus = (attribute - 10) / 2;
-	return Math.floor(bonus);
+	if (attribute > 0){
+		let bonus = (attribute - 10) / 2;
+		return Math.floor(bonus);
+	}else{
+		return bonus = "";
+	}
 }
 
 function UpdateMod (attribute_name) {
@@ -87,6 +91,6 @@ function LoadCharacter(hero) {
 	$("#wis").keyup(UpdateMod("wis"));
 	$("#cha").keyup(UpdateMod("cha"));
 	
-	$("#MaxHP").updated(HealthCalculator());
+	$("#MaxHP").val(HealthCalculator());
 }
 
