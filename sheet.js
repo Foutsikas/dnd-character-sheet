@@ -1,28 +1,46 @@
-
-
-
+//JavaScript Sheet Manager
 myHero = {
-	name: 'Rodgar',
-	class: 'Barbarian',
-	attributes: {
-		str: 18,
-		dex: 10,
-		con: 14,
-		int: 8,
-		wis: 10,
-		cha: 12
-	},
 	inspiration: true,
 	prof_bonus: 2,
 	throw_prof: ['str', 'con'],
 	languages: ['common', 'dwarven'],
-	level: 1
+	CharacterLevel: 1,
+	Experience: 0,
+	NextLvlExp: 0,
+	
 };
 
 
+function CalculateBonus(attribute){
+	let bonus = (attribute - 10) / 2;
+	return Math.floor(bonus);
+}
+
+function UpdateMod (attribute_name) {
+	return () => {
+		let attr = $("#" + attribute_name).val();
+		
+		// Check if attr is number
+		// if not exit without updating
+		
+		let bonus = CalculateBonus(attr);
+		
+		if (bonus > 0) {	
+			$("#" + attribute_name + "Mod").val("+" + bonus);
+		} else {
+			$("#" + attribute_name + "Mod").val(bonus);
+		}
+	}
+}
+
+
 function LoadCharacter(hero) {
-	let name = document.getElementById("name");
-	name.value = hero.name;
-	console.log(name);
+	$("#str").keyup(UpdateMod("str"));
+	$("#dex").keyup(UpdateMod("dex"));
+	$("#con").keyup(UpdateMod("con"));
+	$("#inte").keyup(UpdateMod("inte"));
+	$("#wis").keyup(UpdateMod("wis"));
+	$("#cha").keyup(UpdateMod("cha"));
+	
 }
 
