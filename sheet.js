@@ -33,6 +33,51 @@ function UpdateMod (attribute_name) {
 	}
 }
 
+function HealthCalculator () {
+	
+	let Con = $("#conMod").val();
+	let Class = $("#Class").val().toLowerCase();
+	let HealthPoints = 0;
+	
+	if (Class === "sorcerer"){
+		HealthPoints = Con + Math.floor(Math.Random() * 7);
+		
+	}else if (Class === "wizard"){
+		HealthPoints = Con + Math.floor(Math.Random() * 7);
+		
+	}else if (Class === "bard"){
+		HealthPoints = Con + Math.floor(Math.Random() * 9);
+		
+	}else if (Class === "cleric"){
+		HealthPoints = Con + Math.floor(Math.Random() * 9);
+		
+	}else if (Class === "druid"){
+		HealthPoints = Con + Math.floor(Math.Random() * 9);
+		
+	}else if (Class === "monk"){
+		HealthPoints = Con + Math.floor(Math.Random() * 9);
+		
+	}else if (Class === "rogue"){
+		HealthPoints = Con + Math.floor(Math.Random() * 9);
+		
+	}else if (Class === "warlock"){
+		HealthPoints = Con + Math.floor(Math.Random() * 9);
+		
+	}else if (Class === "fighter"){
+		HealthPoints = Con + Math.floor(Math.Random() * 11);
+		
+	}else if (Class === "paladin"){
+		HealthPoints = Con + Math.floor(Math.Random() * 11);
+		
+	}else if (Class === "ranger"){
+		HealthPoints = Con + Math.floor(Math.Random() * 11);
+		
+	}else if (Class === "barbarian"){
+		HealthPoints = Con + Math.floor(Math.Random() * 13);
+		
+	}
+	return HealthPoints;
+}
 
 function LoadCharacter(hero) {
 	$("#str").keyup(UpdateMod("str"));
@@ -42,5 +87,6 @@ function LoadCharacter(hero) {
 	$("#wis").keyup(UpdateMod("wis"));
 	$("#cha").keyup(UpdateMod("cha"));
 	
+	$("#MaxHP").updated(HealthCalculator());
 }
 
