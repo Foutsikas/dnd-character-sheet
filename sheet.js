@@ -38,38 +38,64 @@ function UpdateMod (attribute_name) {
 	}
 }
 
+const CharacterClasses = {
+	sorcerer: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 7) + 1)),
+		proficiency_bonus: 2
+	},
+	wizard: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 7) + 1)),
+		proficiency_bonus: 2
+	},
+	bard: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		proficiency_bonus: 2
+	},
+	cleric: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		proficiency_bonus: 2
+	},
+	druid: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		proficiency_bonus: 2
+	},
+	monk: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		proficiency_bonus: 2
+	},
+	rogue: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		proficiency_bonus: 2
+	},
+	warlock: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		proficiency_bonus: 2
+	},
+	fighter: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 11) + 1)),
+		proficiency_bonus: 2
+	},
+	paladin: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 11) + 1)),
+		proficiency_bonus: 2
+	},
+	ranger: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 11) + 1)),
+		proficiency_bonus: 2
+	},
+	barbarian: {
+		getHP: (Con) => (Con + (Math.floor(Math.random() * 13) + 1)),
+		proficiency_bonus: 2,
+		saving_throw_prof: ['str', 'con']
+	}
+};
+
+
 function HealthCalculator () {
-	
 	let Con = $("#conMod").val();
 	let Class = $("#Class").val().toLowerCase();
-	let HealthPoints = 0;
 	
-	if (Class === "sorcerer"){
-		HealthPoints = Con + (Math.floor(Math.random() * 7) + 1);
-	}else if (Class === "wizard"){
-		HealthPoints = Con + (Math.floor(Math.random() * 7) + 1);
-	}else if (Class === "bard"){
-		HealthPoints = Con + (Math.floor(Math.random() * 9) + 1);
-	}else if (Class === "cleric"){
-		HealthPoints = Con + (Math.floor(Math.random() * 9) + 1);
-	}else if (Class === "druid"){
-		HealthPoints = Con + (Math.floor(Math.random() * 9) + 1);
-	}else if (Class === "monk"){
-		HealthPoints = Con + (Math.floor(Math.random() * 9) + 1);
-	}else if (Class === "rogue"){
-		HealthPoints = Con + (Math.floor(Math.random() * 9) + 1);
-	}else if (Class === "warlock"){
-		HealthPoints = Con + (Math.floor(Math.random() * 9) + 1);
-	}else if (Class === "fighter"){
-		HealthPoints = Con + (Math.floor(Math.random() * 11) + 1);
-	}else if (Class === "paladin"){
-		HealthPoints = Con + (Math.floor(Math.random() * 11) + 1);
-	}else if (Class === "ranger"){
-		HealthPoints = Con + (Math.floor(Math.random() * 11) + 1);
-	}else if (Class === "barbarian"){
-		HealthPoints = Con + (Math.floor(Math.random() * 13) + 1);
-	}
-	return HealthPoints;
+	return CharacterClasses[Class].getHP(Con);
 }
 
 function LoadCharacter(hero) {
