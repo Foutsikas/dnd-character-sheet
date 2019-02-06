@@ -1,4 +1,5 @@
 //JavaScript Sheet Manager
+//jQuery
 myHero = {
 	inspiration: true,
 	prof_bonus: 2,
@@ -44,41 +45,29 @@ function HealthCalculator () {
 	let HealthPoints = 0;
 	
 	if (Class === "sorcerer"){
-		HealthPoints = Con + Math.floor(Math.Random() * 7);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 7) + 1);
 	}else if (Class === "wizard"){
-		HealthPoints = Con + Math.floor(Math.Random() * 7);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 7) + 1;
 	}else if (Class === "bard"){
-		HealthPoints = Con + Math.floor(Math.Random() * 9);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 9) + 1;
 	}else if (Class === "cleric"){
-		HealthPoints = Con + Math.floor(Math.Random() * 9);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 9) + 1;
 	}else if (Class === "druid"){
-		HealthPoints = Con + Math.floor(Math.Random() * 9);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 9) + 1;
 	}else if (Class === "monk"){
-		HealthPoints = Con + Math.floor(Math.Random() * 9);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 9) + 1;
 	}else if (Class === "rogue"){
-		HealthPoints = Con + Math.floor(Math.Random() * 9);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 9) + 1;
 	}else if (Class === "warlock"){
-		HealthPoints = Con + Math.floor(Math.Random() * 9);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 9) + 1;
 	}else if (Class === "fighter"){
-		HealthPoints = Con + Math.floor(Math.Random() * 11);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 11) + 1;
 	}else if (Class === "paladin"){
-		HealthPoints = Con + Math.floor(Math.Random() * 11);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 11) + 1;
 	}else if (Class === "ranger"){
-		HealthPoints = Con + Math.floor(Math.Random() * 11);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 11) + 1;
 	}else if (Class === "barbarian"){
-		HealthPoints = Con + Math.floor(Math.Random() * 13);
-		
+		HealthPoints = Con + (Math.floor(Math.Random() * 13) + 1;
 	}
 	return HealthPoints;
 }
