@@ -15,12 +15,17 @@ span input{
 
 input{
 	type: text;
-	type: number;
 	text-align: center;
 	border: 2px solid black;
 	padding: 0.6em;
 	
 }
+input[type=number]{
+	background-color: transparent;
+	border: 2px solid black;
+	padding: 0.6em;
+}
+
 textarea{
 	type: text;
 	border: 2px solid black;

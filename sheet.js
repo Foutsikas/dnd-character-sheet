@@ -40,51 +40,63 @@ function UpdateMod (attribute_name) {
 
 const CharacterClasses = {
 	sorcerer: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 7) + 1)),
+		getInitialHP: (ConMod) => 6 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 7) + 1)),
 		proficiency_bonus: 2
 	},
 	wizard: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 7) + 1)),
+		getInitialHP: (ConMod) => 6 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 7) + 1)),
 		proficiency_bonus: 2
 	},
 	bard: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		getInitialHP: (ConMod) => 8 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
 		proficiency_bonus: 2
 	},
 	cleric: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		getInitialHP: (ConMod) => 8 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
 		proficiency_bonus: 2
 	},
 	druid: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		getInitialHP: (ConMod) => 8 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
 		proficiency_bonus: 2
 	},
 	monk: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		getInitialHP: (ConMod) => 8 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
 		proficiency_bonus: 2
 	},
 	rogue: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		getInitialHP: (ConMod) => 8 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
 		proficiency_bonus: 2
 	},
 	warlock: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 9) + 1)),
+		getInitialHP: (ConMod) => 8 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
 		proficiency_bonus: 2
 	},
 	fighter: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 11) + 1)),
+		getInitialHP: (ConMod) => 10 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 11) + 1)),
 		proficiency_bonus: 2
 	},
 	paladin: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 11) + 1)),
+		getgetInitialHP: (ConMod) => (ConMod) => 10 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 11) + 1)),
 		proficiency_bonus: 2
 	},
 	ranger: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 11) + 1)),
+		getInitialHP: (ConMod) => 10 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 11) + 1)),
 		proficiency_bonus: 2
 	},
 	barbarian: {
-		getHP: (Con) => (Con + (Math.floor(Math.random() * 13) + 1)),
+		getInitialHP: (ConMod) => 12 + ConMod,
+		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 13) + 1)),
 		proficiency_bonus: 2,
 		saving_throw_prof: ['str', 'con']
 	}
@@ -92,10 +104,14 @@ const CharacterClasses = {
 
 
 function HealthCalculator () {
-	let Con = $("#conMod").val();
+	let ConMod = parseInt($("#conMod").val());
 	let Class = $("#Class").val().toLowerCase();
-	
-	return CharacterClasses[Class].getHP(Con);
+	let Level = parseInt($("#CharacterLevel").val());
+	if (Level === 1){
+		
+		return CharacterClasses[Class].getInitialHP(ConMod);
+	}
+	return CharacterClasses[Class].getHP(ConMod);
 }
 
 function LoadCharacter(hero) {
