@@ -42,63 +42,62 @@ const CharacterClasses = {
 	sorcerer: {
 		getInitialHP: (ConMod) => 6 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 7) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["#ST_Constitution", "#ST_Charisma"]
 	},
 	wizard: {
 		getInitialHP: (ConMod) => 6 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 7) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Intelligence", "ST_Wisdom"]
 	},
 	bard: {
 		getInitialHP: (ConMod) => 8 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Dexterity", "ST_Charisma"]
 	},
 	cleric: {
 		getInitialHP: (ConMod) => 8 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Charisma", "ST_Wisdom"]
 	},
 	druid: {
 		getInitialHP: (ConMod) => 8 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Intelligence", "ST_Wisdom"]
 	},
 	monk: {
 		getInitialHP: (ConMod) => 8 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Strength", "ST_Dexterity"]
 	},
 	rogue: {
 		getInitialHP: (ConMod) => 8 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Dexterity", "ST_Intelligence"]
 	},
 	warlock: {
 		getInitialHP: (ConMod) => 8 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 9) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Wisdom", "ST_Charisma"]
 	},
 	fighter: {
 		getInitialHP: (ConMod) => 10 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 11) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Strength", "ST_Constitution"]
 	},
 	paladin: {
 		getgetInitialHP: (ConMod) => (ConMod) => 10 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 11) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Wisdom", "ST_Charisma"]
 	},
 	ranger: {
 		getInitialHP: (ConMod) => 10 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 11) + 1)),
-		proficiency_bonus: 2
+		Saving_Throws: ["ST_Strength", "ST_Dexterity"]
 	},
 	barbarian: {
 		getInitialHP: (ConMod) => 12 + ConMod,
 		getHP: (ConMod) => (ConMod + (Math.floor(Math.random() * 13) + 1)),
-		proficiency_bonus: 2,
-		saving_throw_prof: ['str', 'con']
+		Saving_Throws: ["ST_Strength", "ST_Constitution"]
 	}
 };
 
@@ -123,4 +122,7 @@ function LoadCharacter(hero) {
 	$("#wis").keyup(UpdateMod("wis"));
 	$("#cha").keyup(UpdateMod("cha"));
 }
+
+
+//Add a method to automatically update Saving_Throws according to the Class and update the ST_Input with the corresponding modifier.
 
