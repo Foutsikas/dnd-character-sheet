@@ -34,15 +34,6 @@ function UpdateMod (attribute_name) {
 //Calculates the Dice Rolls
 const Roll = (n) => (Math.floor(Math.random() * (n+1)) + 1);
 
-
-const TestWeapon = {
-	title: "Silver Dagger",
-	type: "Dagger",
-	getDamage: () => Roll(4) + Roll(4),
-	damage_type: ["piercing", "holy"]
-};
-
-
 //Has all the info about a class
 const CharacterClasses = {
 	sorcerer: {
