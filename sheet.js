@@ -143,9 +143,10 @@ function LoadCharacter(hero) {
 	$("#wis").change(UpdateMod("wis"));
 	$("#cha").change(UpdateMod("cha"));
 	
+	//Saving Throws Values
+	$("#ST_Strength").change(() => {$("#str").change(UpdateMod("str"))});
+	
 	$("#CharacterLevel").change(() => {$("#MaxHP").val(HealthCalculator());});
 }
-
-
 
 //Add a method to automatically update Saving_Throws according to the Class and update the ST_Input with the corresponding modifier.
