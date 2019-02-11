@@ -1,17 +1,9 @@
 //JavaScript Sheet Manager
 //jQuery
 myHero = {
-	inspiration: true,
-	prof_bonus: 2,
-	throw_prof: ['str', 'con'],
-	languages: ['common', 'dwarven'],
-	CharacterLevel: 1,
-	Experience: 0,
-	NextLvlExp: 0,
-	
 };
 
-
+//Function that calculates modifiers
 function CalculateBonus(attribute){
 	if (attribute > 0){
 		let bonus = (attribute - 10) / 2;
@@ -21,6 +13,7 @@ function CalculateBonus(attribute){
 	}
 }
 
+//Function that updates the modifier value
 function UpdateMod (attribute_name) {
 	return () => {
 		let attr = $("#" + attribute_name).val();
@@ -30,7 +23,7 @@ function UpdateMod (attribute_name) {
 		
 		let bonus = CalculateBonus(attr);
 		
-		if (bonus > 0) {	
+		if (bonus > 0) {
 			$("#" + attribute_name + "Mod").val("+" + bonus);
 		} else {
 			$("#" + attribute_name + "Mod").val(bonus);
@@ -38,6 +31,8 @@ function UpdateMod (attribute_name) {
 	}
 }
 
+
+//Has all the info about a class
 const CharacterClasses = {
 	sorcerer: {
 		getInitialHP: (ConMod) => 6 + ConMod,
@@ -106,23 +101,31 @@ function HealthCalculator () {
 	let ConMod = parseInt($("#conMod").val());
 	let Class = $("#Class").val().toLowerCase();
 	let Level = parseInt($("#CharacterLevel").val());
+	
+	
 	if (Level === 1){
 		
 		return CharacterClasses[Class].getInitialHP(ConMod);
+	} else if (Level > 1){
+		let currentHP = parseInt($("#MaxHP").val());
+		return (currentHP + CharacterClasses[Class].getHP(ConMod));
 	}
-	return CharacterClasses[Class].getHP(ConMod);
+	
+	return 0;
 }
 
 function LoadCharacter(hero) {
-	$("#str").keyup(UpdateMod("str"));
-	$("#dex").keyup(UpdateMod("dex"));
-	$("#con").keyup(UpdateMod("con"));
-	$("#con").keyup(() => {$("#MaxHP").val(HealthCalculator());});
-	$("#inte").keyup(UpdateMod("inte"));
-	$("#wis").keyup(UpdateMod("wis"));
-	$("#cha").keyup(UpdateMod("cha"));
+	$("#str").change(UpdateMod("str"));
+	$("#dex").change(UpdateMod("dex"));
+	$("#con").change(UpdateMod("con"));
+	$("#con").change(() => {$("#MaxHP").val(HealthCalculator());});
+	$("#inte").change(UpdateMod("inte"));
+	$("#wis").change(UpdateMod("wis"));
+	$("#cha").change(UpdateMod("cha"));
+	
+	$("#CharacterLevel").change(() => {$("#MaxHP").val(HealthCalculator());});
 }
 
 
-//Add a method to automatically update Saving_Throws according to the Class and update the ST_Input with the corresponding modifier.
 
+//Add a method to automatically update Saving_Throws according to the Class and update the ST_Input with the corresponding modifier.

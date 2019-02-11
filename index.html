@@ -44,7 +44,7 @@
 									<input id="str" name="Strength" maxlength="2">
 								</div>
 								<div class="ModifierBox">
-									<input id="strMod" name="StrengthModifier" maxlength="2">
+									<input id="strMod" name="StrengthModifier" maxlength="2" readonly>
 								</div>
 							</div>
 						</span>
@@ -55,7 +55,7 @@
 									<input id="dex" name="Dexterity" maxlength="2">
 								</div>
 								<div class="ModifierBox">
-									<input id="dexMod" name="DexterityModifier" maxlength="2">
+									<input id="dexMod" name="DexterityModifier" maxlength="2" readonly>
 								</div>
 							</div>
 						</span>
@@ -66,7 +66,7 @@
 									<input id="con" name="Constitution" maxlength="2">
 								</div>
 								<div class="ModifierBox">
-									<input id="conMod" name="ConstitutionModifier" maxlength="2">
+									<input id="conMod" name="ConstitutionModifier" maxlength="2" readonly>
 								</div>
 							</div>
 						</span>
@@ -77,7 +77,7 @@
 									<input id="inte" name="Intelligence" maxlength="2">
 								</div>
 								<div class="ModifierBox">
-									<input id="inteMod" name="IntelligenceModifier" maxlength="2">
+									<input id="inteMod" name="IntelligenceModifier" maxlength="2" readonly>
 								</div>
 							</div>
 						</span>
@@ -88,7 +88,7 @@
 									<input id="wis" name="Wisdom" maxlength="2">
 								</div>
 								<div class="ModifierBox">
-									<input id="wisMod" name="WisdomModifier" maxlength="2">
+									<input id="wisMod" name="WisdomModifier" maxlength="2" readonly>
 								</div>
 							</div>
 						</span>
@@ -99,7 +99,7 @@
 									<input id="cha" name="Charisma" maxlength="2">
 								</div>
 								<div class="ModifierBox">
-									<input id="chaMod" name="CharismaModifier" maxlength="2">
+									<input id="chaMod" name="CharismaModifier" maxlength="2" readonly>
 								</div>
 							</div>
 						</span>
@@ -169,7 +169,7 @@
 						<h2>Max Hit Points</h2>
 						<span class="CenterBox">
 							<div class="ACBox">
-								<input id="MaxHP" name="MAX_Hit_Points" maxlength="3">
+								<input id="MaxHP" name="MAX_Hit_Points" maxlength="3" readonly>
 							</div>
 						</span>
 					</div>
@@ -188,7 +188,11 @@
 					<h2>Level Managment</h2>
 						<span>
 							Level
-							<input type="number" id="CharacterLevel" name="CharacterLevel" maxlength="3">
+							<input type="number" id="CharacterLevel" name="CharacterLevel" maxlength="3" value=1>
+							<script>$("input").attr({
+									"max":20, 
+									"min":1}); 
+							</script>
 						</span>
 						<span>
 							Experience Points
