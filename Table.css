@@ -34,6 +34,11 @@ textarea{
 	padding: 0.3em;
 }
 
+select{
+	background-color: transparent;
+	border: 2px solid black;
+}
+
 h3{
 	margin-bottom: 0px;
 }
