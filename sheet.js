@@ -17,7 +17,8 @@ function CalculateBonus(attribute){
 function UpdateMod (attribute_name) {
 	return () => {
 		let attr = $("#" + attribute_name).val();
-		
+		let char_class = $("#Class").val();
+
 		// Check if attr is number
 		// if not exit without updating
 		
@@ -25,8 +26,10 @@ function UpdateMod (attribute_name) {
 		
 		if (bonus > 0) {
 			$("#" + attribute_name + "Mod").val("+" + bonus);
+			$("#" + attribute_name + "SavingThrow").val("+" + bonus);
 		} else {
 			$("#" + attribute_name + "Mod").val(bonus);
+			$("#" + attribute_name + "SavingThrow").val(bonus);
 		}
 	}
 }
@@ -43,13 +46,13 @@ const CharacterClasses = {
 			Armor: "none",
 			Weapons: ["Dagger", "Dart", "Sling", "Quarterstaff", "Light_Crossbow"],
 			Tools: "none",
-			Saving_Throws: ["#ST_Constitution", "#ST_Charisma"],
+			Saving_Throws: ["str", "cha"],
 		}
 	},
 	wizard: {
 		getInitialHP: (ConMod) => 6 + ConMod,
 		getHP: (ConMod) => (ConMod + Roll(6)),
-		Saving_Throws: ["ST_Intelligence", "ST_Wisdom"]
+		Saving_Throws: ["inte", "ST_Wisdom"]
 	},
 	bard: {
 		getInitialHP: (ConMod) => 8 + ConMod,
@@ -119,6 +122,7 @@ function HealthCalculator () {
 		//If the level is above one, it returns the currentHP plus the random constitution modifier that get calculated automatically.
 		return (currentHP + CharacterClasses[Class].getHP(ConMod));
 	}
+	
 	//If level is invalid it returns zero.
 	return 0;
 }
@@ -137,16 +141,17 @@ function LoadCharacter(hero) {
 	//Updates the attribute modifiers when the Attribute value change.
 	$("#str").change(UpdateMod("str"));
 	$("#dex").change(UpdateMod("dex"));
-	$("#con").change(UpdateMod("con"));
-	$("#con").change(() => {$("#MaxHP").val(HealthCalculator());});//Updates the MaxHP value when the Constitution Modifier changes.
+	$("#con").change(UpdateMod("con"));	
 	$("#inte").change(UpdateMod("inte"));
 	$("#wis").change(UpdateMod("wis"));
 	$("#cha").change(UpdateMod("cha"));
 	
-	//Saving Throws Values
-	$("#ST_Strength").change(() => {$("#str").change(UpdateMod("str"))});
 	
-	$("#CharacterLevel").change(() => {$("#MaxHP").val(HealthCalculator());});
+	//Updates the MaxHP value
+	$("#con").change(() => {$("#MaxHP").val(HealthCalculator());});//Updates the MaxHP value when the Constitution Modifier changes.
+	$("#Class").change(() => {$("#MaxHP").val(HealthCalculator());});//Updates the MaxHP value when the Class is changed.
+	$("#CharacterLevel").change(() => {$("#MaxHP").val(HealthCalculator());});//Updates the MaxHP value when the Level is updated.
+	
 }
 
 //Add a method to automatically update Saving_Throws according to the Class and update the ST_Input with the corresponding modifier.
