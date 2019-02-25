@@ -36,6 +36,15 @@ function UpdateMod(attribute_name) {
 //Calculates the Dice Rolls
 const Roll = (n) => (Math.floor(Math.random() * (n + 1)) + 1);
 
+const Tools = {
+	Artisans_Tools: {
+	},
+	Gaming_Sets: {
+	},
+	Musical_Instruments: {
+	}
+}
+
 //Has all the info about a class
 const CharacterClasses = {
     sorcerer: {
@@ -51,61 +60,127 @@ const CharacterClasses = {
     wizard: {
         getInitialHP: (ConMod) => 6 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(6)),
-        Saving_Throws: ["inte", "ST_Wisdom"]
+		Saving_Throws: ["inte", "ST_Wisdom"],
+		Proficiences: {
+			Armor: "none",
+			Weapons: ["Dagger", "Dart", "Sling", "Quarterstaff", "Light_Crossbow"],
+			Tools: "none",
+			Saving_Throws: ["int", "wis"]
+		}
     },
     bard: {
         getInitialHP: (ConMod) => 8 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(8)),
-        Saving_Throws: ["ST_Dexterity", "ST_Charisma"]
+		Saving_Throws: ["ST_Dexterity", "ST_Charisma"],
+		Proficiences: {
+			Armor: "Light_Armor",
+			Weapons: ["Simple_Weapon", "Hand_Crossbow", "Longsword", "Rapier", "Shortsword"],
+			Tools: "Three musical Instruments",
+			Saving_Throws: ["dex", "cha"]
+		}
     },
     cleric: {
         getInitialHP: (ConMod) => 8 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(8)),
-        Saving_Throws: ["ST_Charisma", "ST_Wisdom"]
+		Saving_Throws: ["ST_Charisma", "ST_Wisdom"],
+		Proficiences: {
+			Armor: ["Light_Armor", "Medium_Armor", "Shield"],
+			Weapons: ["Simple_Weapon"],
+			Tools: "none",
+			Saving_Throws: ["wis", "cha"]
+		}
     },
     druid: {
         getInitialHP: (ConMod) => 8 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(8)),
-        Saving_Throws: ["ST_Intelligence", "ST_Wisdom"]
+		Saving_Throws: ["ST_Intelligence", "ST_Wisdom"],
+		Proficiences: {
+			Armor: ["Light_Armor", "Medium_Armor", "Shield"],
+			Weapons: ["Club", "Dagger", "Dart", "Javelin", "Mace", "Quarterstaff", "Scimitar", "Sickle", "Sling", "Spear"],
+			Tools: "Herbalism_Kit",
+			Saving_Throws: ["int", "wis"]
+		}
     },
     monk: {
         getInitialHP: (ConMod) => 8 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(8)),
-        Saving_Throws: ["ST_Strength", "ST_Dexterity"]
+		Saving_Throws: ["ST_Strength", "ST_Dexterity"],
+		Proficiences: {
+			Armor: "none",
+			Weapons: ["Simple_Weapon", "Shortsword"],
+			Tools: ["One_Artisan's_Supplies", "One_Musical_Instrument"],
+			Saving_Throws: ["str", "dex"]
+		}
     },
     rogue: {
         getInitialHP: (ConMod) => 8 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(8)),
-        Saving_Throws: ["ST_Dexterity", "ST_Intelligence"]
+		Saving_Throws: ["ST_Dexterity", "ST_Intelligence"],
+		Proficiences: {
+			Armor: "Light_Armor",
+			Weapons: ["Simple_Weapon", "Hand_Crossbow", "Longsword", "Rapier", "Shortsword"],
+			Tools: "Thieve's_Tools",
+			Saving_Throws: []
+		}
     },
     warlock: {
         getInitialHP: (ConMod) => 8 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(8)),
-        Saving_Throws: ["ST_Wisdom", "ST_Charisma"]
+		Saving_Throws: ["ST_Wisdom", "ST_Charisma"],
+		Proficiences: {
+			Armor: "",
+			Weapons: [],
+			Tools: "",
+			Saving_Throws: []
+		}
     },
     fighter: {
         getInitialHP: (ConMod) => 10 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(10)),
-        Saving_Throws: ["ST_Strength", "ST_Constitution"]
+		Saving_Throws: ["ST_Strength", "ST_Constitution"],
+		Proficiences: {
+			Armor: "",
+			Weapons: [],
+			Tools: "",
+			Saving_Throws: []
+		}
     },
     paladin: {
         getgetInitialHP: (ConMod) => (ConMod) => 10 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(10)),
-        Saving_Throws: ["ST_Wisdom", "ST_Charisma"]
+		Saving_Throws: ["ST_Wisdom", "ST_Charisma"],
+		Proficiences: {
+			Armor: "",
+			Weapons: [],
+			Tools: "",
+			Saving_Throws: []
+		}
     },
     ranger: {
         getInitialHP: (ConMod) => 10 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(10)),
-        Saving_Throws: ["ST_Strength", "ST_Dexterity"]
+		Saving_Throws: ["ST_Strength", "ST_Dexterity"],
+		Proficiences: {
+			Armor: "",
+			Weapons: [],
+			Tools: "",
+			Saving_Throws: []
+		}
     },
     barbarian: {
         getInitialHP: (ConMod) => 12 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(12)),
-        Saving_Throws: ["ST_Strength", "ST_Constitution"]
+		Saving_Throws: ["ST_Strength", "ST_Constitution"],
+		Proficiences: {
+			Armor: "",
+			Weapons: [],
+			Tools: "",
+			Saving_Throws: []
+		}
     }
 };
 
-
+//Calculates Health per Level
 function HealthCalculator() {
     let ConMod = parseInt($("#conMod").val());
     let Class = $("#Class").val().toLowerCase();
@@ -126,6 +201,7 @@ function HealthCalculator() {
     return 0;
 }
 
+//Calculates the Proficiency Bonus per Level
 function ProficiencyBonusCalculator() {
 	let Level = parseInt($("#CharacterLevel").val());
 	let ProfBonus = 0;
