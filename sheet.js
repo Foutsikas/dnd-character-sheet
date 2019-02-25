@@ -126,6 +126,22 @@ function HealthCalculator() {
     return 0;
 }
 
+function ProficiencyBonusCalculator() {
+	let Level = parseInt($("#CharacterLevel").val());
+	let ProfBonus=0;
+
+	if (Level = 1 && Level <= 4) {
+		return ProfBonus = "+" + 2;
+	} else if (Level >= 5 && Level <= 8) {
+		return ProfBonus = "+" + 3;
+	} else if (Level >= 9 && Level <= 12) {
+		return ProfBonus = "+" + 4;
+	} else if (Level >= 13 && Level <= 16) {
+		return ProfBonus = "+" + 5;
+	} else if (Level >= 17 && Level <= 20)
+		return ProfBonus = "+" + 6;
+}
+
 //Function that capitalize the first letter of a word.
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -133,7 +149,8 @@ function capitalizeFirstLetter(string) {
 
 function LoadCharacter(hero) {
 
-    let class_titles = Object.keys(CharacterClasses);
+	let class_titles = Object.keys(CharacterClasses);
+	let Level = parseInt($("#CharacterLevel").val());
     for (let title of class_titles) {
         $("#Class").append("<option value='" + title + "'>" + capitalizeFirstLetter(title) + "</option>");
     }
@@ -145,6 +162,10 @@ function LoadCharacter(hero) {
     $("#wis").change(UpdateMod("wis"));
     $("#cha").change(UpdateMod("cha"));
 
+	//Updates the proficiency Bonus per Level
+	$("#CharacterLevel").change(() => {
+		$("#ProficiencyBonus").val(ProficiencyBonusCalculator(Level));
+	});
 
     //Updates the MaxHP value
     $("#con").change(() => {
