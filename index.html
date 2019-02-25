@@ -39,76 +39,76 @@
 					<div class="seven columns">
 						<span>
 							<b>STRENGTH</b>
-							<div class="AttributeBox">
-								<div class="Attribute">
+							<span display:block class="AttributeBox">
+								<span class="Attribute">
 									<input id="str" name="Strength" maxlength="2">
-								</div>
-								<div class="ModifierBox">
+								</span>
+								<span class="ModifierBox">
 									<input id="strMod" name="StrengthModifier" maxlength="2" readonly>
-								</div>
-							</div>
+								</span>
+							</span>
 						</span>
 						<span>
 							<b>DEXTERITY</b>
-							<div class="AttributeBox">
-								<div class="Attribute">
+							<span display:block class="AttributeBox">
+								<span class="Attribute">
 									<input id="dex" name="Dexterity" maxlength="2">
-								</div>
-								<div class="ModifierBox">
+								</span>
+								<span class="ModifierBox">
 									<input id="dexMod" name="DexterityModifier" maxlength="2" readonly>
-								</div>
-							</div>
+								</span>
+							</span>
 						</span>
 						<span>
 							<b>CONSTITUTION</b>
-							<div class="AttributeBox">
-								<div class="Attribute">
+							<span display:block class="AttributeBox">
+								<span class="Attribute">
 									<input id="con" name="Constitution" maxlength="2">
-								</div>
-								<div class="ModifierBox">
+								</span>
+								<span class="ModifierBox">
 									<input id="conMod" name="ConstitutionModifier" maxlength="2" readonly>
-								</div>
-							</div>
+								</span>
+							</span>
 						</span>
 						<span>
 							<b>INTELLIGENCE</b>
-							<div class="AttributeBox">
-								<div class="Attribute">
+							<span display:block class="AttributeBox">
+								<span class="Attribute">
 									<input id="inte" name="Intelligence" maxlength="2">
-								</div>
-								<div class="ModifierBox">
+								</span>
+								<span class="ModifierBox">
 									<input id="inteMod" name="IntelligenceModifier" maxlength="2" readonly>
-								</div>
-							</div>
+								</span>
+							</span>
 						</span>
 						<span>
 							<b>WISDOM</b>
-							<div class="AttributeBox">
-								<div class="Attribute">
+							<span display:block class="AttributeBox">
+								<span class="Attribute">
 									<input id="wis" name="Wisdom" maxlength="2">
-								</div>
-								<div class="ModifierBox">
+								</span>
+								<span class="ModifierBox">
 									<input id="wisMod" name="WisdomModifier" maxlength="2" readonly>
-								</div>
-							</div>
+								</span>
+							</span>
 						</span>
 						<span>
 							<b>CHARISMA</b>
-							<div class="AttributeBox">
-								<div class="Attribute">
+							<span display:block class="AttributeBox">
+								<span class="Attribute">
 									<input id="cha" name="Charisma" maxlength="2">
-								</div>
-								<div class="ModifierBox">
+								</span>
+								<span class="ModifierBox">
 									<input id="chaMod" name="CharismaModifier" maxlength="2" readonly>
-								</div>
-							</div>
+								</span>
+							</span>
 						</span>
 					</div>
 				</div>
 				
 				<!SAVING THROWS AND SKILLS>
 				
-				<div class="offset-by-two columns two columns Saving_Throws_Skills">
+				<div class="offset-by-one columns three columns Saving_Throws_Skills">
 					<div style="margin-top: 130px;">
 						<div class="BoxNextToText SquareBox">
 							<input id="Inspiration" name="Inspiration" maxlength="2">
@@ -160,25 +160,25 @@
 					<div>
 						<h2>Armor Class</h2>
 						<span class="CenterBox">
-							<div class="ACBox">
+							<span class="ACBox">
 								<input id="ArmorClass" name="Armor_Class" maxlength="2">
-							</div>
+							</span>
 						</span>
 					</div>
 					<div>
 						<h2>Max Hit Points</h2>
 						<span class="CenterBox">
-							<div class="ACBox">
+							<span class="ACBox">
 								<input id="MaxHP" name="MAX_Hit_Points" maxlength="3" readonly>
-							</div>
+							</span>
 						</span>
 					</div>
 					<div>
 						<h2>Current Hit Points</h2>
 						<span class="CenterBox">
-							<div class="ACBox">
+							<span class="ACBox">
 								<input id="CurrentHP" name="C_HP" maxlength="3">
-							</div>
+							</span>
 						</span>
 					</div>
 				</div>
@@ -187,38 +187,37 @@
 				<div class=" offset-by-one columns two columns">
 					<h2>Level Managment</h2>
 						<span>
-							Level
+							<b>Level</b>
 							<input type="number" id="CharacterLevel" name="CharacterLevel" maxlength="3" value=1>
 							<script>$("input").attr({
 									"max":20, 
 									"min":1}); 
 							</script>
 						</span>
+					<br />
 						<span>
-							Experience Points
+							<b>Experience Points</b>
 							<input id="Experience" name="Experience" maxlength="5">
 						</span>
-						<span>
-							NextLvlExp
-							<input id="NextLvlExp" name="NextLvlExp" maxlength="5">
-						</span>
+					<br />
 					<div>
 						<span>
-							<h3>LANGUAGES</h3>
+							<b>LANGUAGES</b>
 							<textarea rows="3" cols="15" id="Language" name="Language"></textarea>
 						</span>
 						<span>
-							<h3>CONDITIONS</h3>
+							<b>CONDITIONS</b>
 							<textarea rows="4" cols="15" id="Conditions" name="Conditions & Enchantments"></textarea>
 						</span>
 						<span>
-							<h3>RESISTANCES</h3>
+							<b>RESISTANCES</b>
 							<textarea rows="4" cols="15" id="Resistances" name="Resistances"></textarea>
 						</span>
 						<span>
-							<h3>SPECIAL ABILITIES</h3>
+							<b>SPECIAL ABILITIES</b>
 							<textarea rows="4" cols="15" id="SpecialSkills" name="Special Skills & Abilities"></textarea>
 						</span>
+						<br />
 					</div>
 				</div>
 			</div>
@@ -228,7 +227,7 @@
 		<div id="weapons">
 			<div id="WeaponText">
 				<span>
-					<h3>Weapon</h3>
+					<b>Weapon</b>
 					<input id="Weapon1" name="Weapon" maxlength="15">
 					<input id="Weapon2" name="Weapon" maxlength="15">
 					<input id="Weapon3" name="Weapon" maxlength="15">
@@ -236,7 +235,7 @@
 			</div>
 			<div id="WeaponText">
 				<span>
-					<h3>Attack Bonus</h3>
+					<b>Attack Bonus</b>
 					<input id="ToHit1" name="To_Hit" maxlength="15">
 					<input id="ToHit2" name="To_Hit" maxlength="15">
 					<input id="ToHit3" name="To_Hit" maxlength="15">
@@ -244,7 +243,7 @@
 			</div>
 			<div id="WeaponText">
 				<span>
-					<h3>Damage Type</h3>
+					<b>Damage Type</b>
 					<input id="Damage1" name="Damage" maxlength="10">
 					<input id="Damage2" name="Damage" maxlength="10">
 					<input id="Damage3" name="Damage" maxlength="10">
@@ -252,7 +251,7 @@
 			</div>
 			<div id="WeaponText">
 				<span>
-					<h3>Range </h3>
+					<b>Range </b>
 					<input id="Range1" name="Range" maxlength="5">
 					<input id="Range2" name="Range" maxlength="5">
 					<input id="Range3" name="Range" maxlength="5">
@@ -260,7 +259,8 @@
 			</div>
 			<div id="WeaponText">
 				<span>
-					<h3>Notes</h3>
+					<b>Notes</b>
+					<br />
 					<textarea rows="4" cols="15" id="Notes" name="Notes"></textarea>
 				</span>
 			</div>
