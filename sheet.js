@@ -128,9 +128,9 @@ function HealthCalculator() {
 
 function ProficiencyBonusCalculator() {
 	let Level = parseInt($("#CharacterLevel").val());
-	let ProfBonus=0;
+	let ProfBonus = 0;
 
-	if (Level = 1 && Level <= 4) {
+	if (Level <= 4) {
 		return ProfBonus = "+" + 2;
 	} else if (Level >= 5 && Level <= 8) {
 		return ProfBonus = "+" + 3;
