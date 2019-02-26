@@ -36,13 +36,12 @@ function UpdateMod(attribute_name) {
 //Calculates the Dice Rolls
 const Roll = (n) => (Math.floor(Math.random() * (n + 1)) + 1);
 
+
+
 const Tools = {
-	Artisans_Tools: {
-	},
-	Gaming_Sets: {
-	},
-	Musical_Instruments: {
-	}
+    Artisans_Tools: ["Alchemist's Supplies", "Brewer’s supplies", "Calligrapher's Supplies", "Carpenter’s tools", "Cartographer’s tools", "Cobbler’s tools", "Cook’s utensils", "Glassblower’s tools", "Jeweler’s tools", "Leatherworker’s tools", "Mason’s tools", "Painter’s supplies", "Potter’s tools", "Smith’s tools", "Tinker’s tools", "Weaver’s tools", "Woodcarver’s tools"],
+    Gaming_Sets: ["Dice set", "Playing card set"],
+    Musical_Instruments: ["Bagpipe", "Drum", "Dulcimer", "Flute", "Lute", "Lyre", "Horn", "Pan flute", "Shawm", "Viol"]
 }
 
 //Has all the info about a class
@@ -51,7 +50,7 @@ const CharacterClasses = {
         getInitialHP: (ConMod) => 6 + ConMod,
         getHP: (ConMod) => (ConMod + Roll(6)),
         Proficiences: {
-            Armor: "none",
+            Armor: ["none"],
             Weapons: ["Dagger", "Dart", "Sling", "Quarterstaff", "Light_Crossbow"],
             Tools: "none",
             Saving_Throws: ["str", "cha"],
@@ -62,7 +61,7 @@ const CharacterClasses = {
         getHP: (ConMod) => (ConMod + Roll(6)),
 		Saving_Throws: ["inte", "ST_Wisdom"],
 		Proficiences: {
-			Armor: "none",
+			Armor: ["none"],
 			Weapons: ["Dagger", "Dart", "Sling", "Quarterstaff", "Light_Crossbow"],
 			Tools: "none",
 			Saving_Throws: ["int", "wis"]
@@ -73,9 +72,9 @@ const CharacterClasses = {
         getHP: (ConMod) => (ConMod + Roll(8)),
 		Saving_Throws: ["ST_Dexterity", "ST_Charisma"],
 		Proficiences: {
-			Armor: "Light_Armor",
-			Weapons: ["Simple_Weapon", "Hand_Crossbow", "Longsword", "Rapier", "Shortsword"],
-			Tools: "Three musical Instruments",
+			Armor: ["Light_Armor"],
+            Weapons: ["Simple_Weapon", "Hand_Crossbow", "Longsword", "Rapier", "Shortsword"],
+            Tools: [Object.keys(Tools.Musical_Instruments), Object.keys(Tools.Musical_Instruments), Object.keys(Tools.Musical_Instruments)],
 			Saving_Throws: ["dex", "cha"]
 		}
     },
@@ -255,5 +254,3 @@ function LoadCharacter(hero) {
     }); //Updates the MaxHP value when the Level is updated.
 
 }
-
-//Add a method to automatically update Saving_Throws according to the Class and update the ST_Input with the corresponding modifier.

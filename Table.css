@@ -147,20 +147,27 @@ h3{
 	margin-bottom: 2px;
 }
 
-.Saving_Throws_Skills{
+.Saving_Throws{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
 }
 
-.Saving_Throws_Skills input{
+.Skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.Saving_Throws input{
 	background-color: transparent;
 	border: none;
 	width: 35px;
 	font-size: 15px;
 }
 
-.Saving_Throws_Skills input[type="checkbox"]{
+.Saving_Throws input[type="checkbox"]{
 	margin: 0px;
 }
 
@@ -223,10 +230,25 @@ h3{
 	margin-left: 2px;
 }
 
+#SavingThrowsBorder {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 174px;
+    margin-top: 50px;
+}
+
+#SavingThrowsBorder input {
+    display: column;
+    background-image: linear-gradient(to top, black 0px, transparent 1px);
+    padding-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+
 #SkillBorder{
 	border: 2px solid black;
 	border-radius: 10px;
-	width: 174px;
+	width: 255px;
 	margin-top: 50px;
 }
 
